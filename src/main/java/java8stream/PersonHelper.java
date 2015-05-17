@@ -20,4 +20,8 @@ public class PersonHelper {
 	public static int getAgeSum(List<Person> persons) {
 		return 0;
 	}
+	
+	public static int getAgeSumOfGroupedPersons(List<List<Person>> groupedPersons) {
+		return 0;
+	}
 }

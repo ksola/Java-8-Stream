@@ -76,5 +76,23 @@ public class PersonsTest {
 		assertThat(ageSum).isEqualTo(96);
 		
 	}
+	
+	@Test
+	public void getAgeSumOfGivenGroupedPersons() throws Exception {
+		// given 
+		List<List<Person>> personsGroup = Arrays.asList(
+				Arrays.asList(new Person("Andrzej", 23), new Person("Antoni", 1), new Person("Krystian", 27)),
+				Arrays.asList(new Person("Iwona", 26), new Person("Krzysztof", 22)),
+				Arrays.asList(new Person("Kamil", 26), new Person("Piotr", 24))
+			);
+		
+		
+		// when
+		int ageSum = PersonHelper.getAgeSumOfGroupedPersons(personsGroup);
+		
+		// then 
+		assertThat(ageSum).isEqualTo(96);
+		
+	}
 
 }
