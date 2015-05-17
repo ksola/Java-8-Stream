@@ -1,6 +1,7 @@
 package java8stream;
 
 import java.util.List;
+import java.util.Optional;
 
 public class PersonHelper {
 
@@ -8,7 +9,15 @@ public class PersonHelper {
 		return null;
 	}
 	
-	public static Person getOldesPersons(List<Person> persons) {
+	public static Optional<Person> getOldesPersons(List<Person> persons) {
 		return null;
+	}
+	
+	public static String concatenateNamesCommaSeparated(List<Person> persons) {
+		return null;
+	}
+
+	public static int getAgeSum(List<Person> persons) {
+		return 0;
 	}
 }
