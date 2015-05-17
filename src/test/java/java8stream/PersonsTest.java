@@ -11,6 +11,24 @@ import org.junit.Test;
 public class PersonsTest {
 
 	@Test
+	public void getTheOldestPerson() throws Exception {
+		
+		// given 
+		List<Person> persons = Arrays.asList(new Person("Andrzej", 23),
+				new Person("Antoni", 1), new Person("Krystian", 27),
+				new Person("Iwona", 26), new Person("Krzysztof", 22),
+				new Person("Kamil", 26), new Person("Piotr", 24));
+		
+		// when
+		Optional<Person> oldesPerson = PersonHelper.getOldesPersons(persons);
+		
+		// then 
+		assertThat(oldesPerson).isNotNull();
+		assertThat(oldesPerson.isPresent()).isTrue();
+		assertThat(oldesPerson.get().getName()).isEqualTo("Krystian");
+	}
+
+	@Test
 	public void get3YoungestPersons() {
 		// given 
 		List<Person> persons = Arrays.asList(new Person("Andrzej", 23),
@@ -28,23 +46,6 @@ public class PersonsTest {
 		
 	}
 	
-	@Test
-	public void getTheOldestPerson() throws Exception {
-		
-		// given 
-		List<Person> persons = Arrays.asList(new Person("Andrzej", 23),
-				new Person("Antoni", 1), new Person("Krystian", 27),
-				new Person("Iwona", 26), new Person("Krzysztof", 22),
-				new Person("Kamil", 26), new Person("Piotr", 24));
-		
-		// when
-		Optional<Person> oldesPerson = PersonHelper.getOldesPersons(persons);
-		
-		// then 
-		assertThat(oldesPerson).isNotNull();
-		assertThat(oldesPerson.isPresent()).isTrue();
-		assertThat(oldesPerson.get().getName()).isEqualTo("Krystian");
-	}
 	
 	@Test
 	public void joinNamesCommaSeparated() throws Exception {
@@ -73,7 +74,7 @@ public class PersonsTest {
 		int ageSum = PersonHelper.getAgeSum(persons);
 		
 		// then 
-		assertThat(ageSum).isEqualTo(96);
+		assertThat(ageSum).isEqualTo(149);
 		
 	}
 	
@@ -91,7 +92,7 @@ public class PersonsTest {
 		int ageSum = PersonHelper.getAgeSumOfGroupedPersons(personsGroup);
 		
 		// then 
-		assertThat(ageSum).isEqualTo(96);
+		assertThat(ageSum).isEqualTo(149);
 		
 	}
 
