@@ -20,12 +20,12 @@ public class PersonsTest {
 				new Person("Kamil", 26), new Person("Piotr", 24));
 		
 		// when
-		Optional<Person> oldesPerson = PersonHelper.getOldesPersons(persons);
+		Optional<Person> oldestPerson = PersonHelper.getOldestPerson(persons);
 		
 		// then 
-		assertThat(oldesPerson).isNotNull();
-		assertThat(oldesPerson.isPresent()).isTrue();
-		assertThat(oldesPerson.get().getName()).isEqualTo("Krystian");
+		assertThat(oldestPerson).isNotNull();
+		assertThat(oldestPerson.isPresent()).isTrue();
+		assertThat(oldestPerson.get().getName()).isEqualTo("Krystian");
 	}
 
 	@Test
@@ -37,7 +37,7 @@ public class PersonsTest {
 				new Person("Kamil", 26), new Person("Piotr", 24));
 		
 		// when
-		List<Person> threeYoungestPersons = PersonHelper.get3YoungestPersons(persons);
+		List<Person> threeYoungestPersons = PersonHelper.getThreeYoungestPersons(persons);
 		
 		// then 
 		assertThat(threeYoungestPersons).hasSize(3);
