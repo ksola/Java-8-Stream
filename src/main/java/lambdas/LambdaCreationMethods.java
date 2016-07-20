@@ -29,20 +29,21 @@ public class LambdaCreationMethods {
         };
         displayFunction(function);
         
-        
-        Function<String, String> function2 = null; // with explicit type e.g. String
+        // with explicit type e.g. String and return
+        Function<String, String> function2 = null;
         displayFunction(function2);
         
-        Function<String, String> function3 = null; // without explicit type
+        // without explicit type
+        Function<String, String> function3 = null;
         displayFunction(function3);
         
-        Function<String, String> function4 = null; // without explicit type
+        // without brackets () in argument
+        Function<String, String> function4 = null;
         displayFunction(function4);
         
-        Function<String, String> function5 = null; // lambda expression which have more than one line of code 
+        // lambda without return type
+        Function<String, String> function5 = null; 
         displayFunction(function5);
-        
-        // method references
     }
     
     private static void displayFunction(Function<String, String> toDisplay) {

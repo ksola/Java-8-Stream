@@ -2,19 +2,14 @@ package method.refernces;
 
 import java.util.function.Function;
 
-/*
- * Copyright (c) 2016. Schenker AG
- * All rights reserved.
- */
-
 public class MethodReferenceExamples {
 
     
     public static void main(String[] args) {
         MethodReferenceExamples example = new MethodReferenceExamples();
-        example.greetJohn(example::polish); // object instance method reference
-        example.greetJohn(MethodReferenceExamples::german); // static method reference
-        example.greetJohn(String::toLowerCase); // Class Method reference
+        example.greetJohn(null); // object instance method reference
+        example.greetJohn(null); // static method reference
+        example.greetJohn(null); // Class Method reference String.toLowerCase(string)
     }
     
     public void greetJohn(Function<String, String> languageFunction) {
