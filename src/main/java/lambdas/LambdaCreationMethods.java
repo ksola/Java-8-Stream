@@ -14,9 +14,9 @@ public class LambdaCreationMethods {
             }
         }; 
         
-        Runnable run2 = null;
+        Runnable run2 = () -> {System.out.println("Hello world");};
         
-        Runnable run3 = null;
+        Runnable run3 = () -> System.out.println("Hello world");
         
         
         
@@ -30,19 +30,27 @@ public class LambdaCreationMethods {
         displayFunction(function);
         
         
-        Function<String, String> function2 = null; // with explicit type e.g. String
+        Function<String, String> function2 = (String input) -> {
+            return "Hello " + input;
+        }; // with explicit type e.g. String and return
         displayFunction(function2);
         
-        Function<String, String> function3 = null; // without explicit type
+        Function<String, String> function3 = (input) -> {
+            return "Hello " + input;
+        }; // without explicit type
         displayFunction(function3);
         
-        Function<String, String> function4 = null; // without explicit type
+        Function<String, String> function4 = input -> {
+            return "Hello " + input; 
+        }; // without brackets () in argument
         displayFunction(function4);
+        displayFunction(input -> {
+            return "Hello " + input; 
+        });
         
-        Function<String, String> function5 = null; // lambda expression which have more than one line of code 
+        Function<String, String> function5 = input -> "Hello " + input; // lambda without return type
         displayFunction(function5);
-        
-        // method references
+        displayFunction(input -> "Hello " + input);
     }
     
     private static void displayFunction(Function<String, String> toDisplay) {
