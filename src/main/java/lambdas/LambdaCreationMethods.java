@@ -29,27 +29,29 @@ public class LambdaCreationMethods {
         };
         displayFunction(function);
         
-        
+        // with explicit type e.g. String and return
         Function<String, String> function2 = (String input) -> {
             return "Hello " + input;
-        }; // with explicit type e.g. String and return
+        }; 
         displayFunction(function2);
         
+        // without explicit type
         Function<String, String> function3 = (input) -> {
             return "Hello " + input;
-        }; // without explicit type
+        }; 
         displayFunction(function3);
         
+        // without brackets () in argument
         Function<String, String> function4 = input -> {
             return "Hello " + input; 
-        }; // without brackets () in argument
+        }; 
         displayFunction(function4);
-        displayFunction(input -> {
-            return "Hello " + input; 
-        });
         
-        Function<String, String> function5 = input -> "Hello " + input; // lambda without return type
+        // lambda without return type
+        Function<String, String> function5 = input -> "Hello " + input; 
         displayFunction(function5);
+        
+        
         displayFunction(input -> "Hello " + input);
     }
     
